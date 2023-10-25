@@ -1,0 +1,17 @@
+.shop-item-image-wrapper {
+    overflow: hidden;
+    height: 250px; 
+    width: 100%;
+}
+
+.shop-item-card {
+    height: 550px;
+}
+
+.shop-item-detail-card {
+    min-height: 550px;
+}
+
+.card-body > h5 {
+    margin-top: 15px;
+}
