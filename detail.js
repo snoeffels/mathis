@@ -21,14 +21,18 @@ function renderProduct(product) {
                     </div>
                     <h5 class="card-title">${product.title}</h5>
                     <p class="card-text">${product.description}</p>
-                    <p class="card-text">Stock: ${product.stock} left</p>
-                    <p class="card-text">Price: ${product.price}$</p>
-                    <p class="card-text">Rating: ${product.rating}/5</p>
+                    <div class="d-flex" style="align-items: flex-end">
+                        <p class="card-text" style="font-size: 25px; margin-bottom: 0px">${product.price}$</p>
+                        <p class="card-text" style="margin-left: auto">${product.rating}/5</p>
+                    </div>
                     
                 </div>
                 <div class="card-footer d-flex">
                     <a href="${ q ? '..?q=' + q : '..' }" class="btn btn-primary">Back</a>
-                    <a  class="btn btn-primary" style="margin-left: auto">Buy</a>
+                    <div style="margin-left: auto">
+                        <span style="margin-right:15px">Only ${product.stock} left!</span>
+                        <a class="btn btn-primary" >Buy</a>
+                    </div>
                 </div>
             </div>
         </div>
