@@ -48,3 +48,11 @@ header a {
 .bg-center-x {
     background-position-x: center;
 }
+
+body {
+    background-color: #ececec;
+}
+
+.card {
+    box-shadow:  5px 5px 5px rgba(0,0,0,0.05);
+}
