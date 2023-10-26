@@ -37,10 +37,9 @@
                 <!-- <li><a href="/" class="nav-link px-2">Products</a></li> -->
             </ul>
 
-            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" style="display: flex;" role="search">
-                <input id="search" type="search" class="form-control" placeholder="Search..." aria-label="Search"
-                    oninput="handleSearchInput(event)">
-                <svg id="search-icon" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" style="display: flex;" role="search" onsubmit="event.preventDefault(); document.location.href = '/?q=' + encodeURIComponent(document.getElementById('search').value)">
+                <input id="search" type="search" class="form-control" placeholder="Search..." aria-label="Search">
+                <svg onclick="document.location.href = '/?q=' + encodeURIComponent(document.getElementById('search').value)" id="search-icon" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                   <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                 </svg>
             </form>
@@ -49,7 +48,10 @@
 </header>
 
   <div class="container">
-    <div id="product" class="row">
+    <div id="product" class="row" style="margin-top: 50px">
+      <div class="col-12 text-center" style="margin-top: 85px">
+        <h3>No id, no item sir!</h3>
+      </div>
     </div>
   </div>
 </body>

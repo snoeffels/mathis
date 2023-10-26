@@ -84,6 +84,7 @@ async function fetchProductsByCategory(category, callback) {
 
 
 async function init() {
+    console.log(id);
     if (id) {
         const category = (await fetchProductById(id, renderProduct))?.category;
         console.log(category);
@@ -95,3 +96,5 @@ async function init() {
 }
 
 init();
+
+document.addEventListener("DOMContentLoaded", () => document.querySelector('#search').value = q);

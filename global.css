@@ -37,6 +37,10 @@ header a {
     box-shadow: none;
 }
 
+.card-body {
+    color: #444444;
+}
+
 .bg-contain {
     background-size: contain;
 }

@@ -38,7 +38,7 @@
                     <!-- <li><a href="/" class="nav-link px-2">Products</a></li> -->
                 </ul>
 
-                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search" onsubmit="event.preventDefault()">
                     <input id="search" type="search" class="form-control" placeholder="Search..." aria-label="Search"
                         oninput="handleSearchInput(event)">
                 </form>
@@ -47,8 +47,7 @@
     </header>
 
     <div class="container">
-        <div id="products" class="row">
-        </div>
+        <div id="products" class="row" style="margin-top: 50px"></div>
     </div>
 </body>
 
