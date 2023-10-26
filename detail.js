@@ -23,7 +23,7 @@ function renderProduct(product) {
                     <p class="card-text">${product.description}</p>
                     <div class="d-flex" style="align-items: flex-end">
                         <p class="card-text" style="font-size: 25px; margin-bottom: 0px">${product.price}</p>
-                        <img style="width: 25px; position:relative;bottom: 5px;left: 3px" src="/coin.png">
+                        <img style="width: 25px; position:relative;bottom: 7px;left: 3px" src="/coin.png">
                         <p class="card-text" style="margin-left: auto">${product.rating}/5</p>
                     </div>
                     
