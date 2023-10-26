@@ -3,5 +3,5 @@ function getQueryParam(name) {
     return urlParams.get(name);
 }
 
-id = getQueryParam("id");
-q = getQueryParam("q");
+const id = getQueryParam("id");
+const q = getQueryParam("q");

@@ -1,19 +1,6 @@
-let products = [];
 let search = q || '';
 
-async function handleSearchInput(e) {
-    search = e.target.value;
-    await fetchProducts(search);
-}
-
-async function fetchProducts(s) {
-    const response = await fetch('https://dummyjson.com/products/search?q=' + encodeURIComponent(s));
-    const body = await response.json();
-    products = body.products;
-    renderProducts();
-}
-
-async function renderProducts() {
+function renderProducts(products) {
     productsContainer = document.querySelector('#products');
     productsContainer.innerHTML = '';
 
@@ -48,9 +35,20 @@ async function renderProducts() {
     });
 }
 
-fetchProducts(search);
+async function fetchProducts(s, callback) {
+    const response = await fetch('https://dummyjson.com/products/search?q=' + encodeURIComponent(s));
+    const body = await response.json();
+    
+    if (callback) {
+        callback(body.products);
+    }
+}
 
-document.addEventListener("DOMContentLoaded", function() {
-    console.log(document.querySelector('#search'));
-    document.querySelector('#search').value = search;
-  });
+function handleSearchInput(e) {
+    search = e.target.value;
+    fetchProducts(search, renderProducts);
+}
+
+fetchProducts(search, renderProducts);
+
+document.addEventListener("DOMContentLoaded", () => document.querySelector('#search').value = search);
