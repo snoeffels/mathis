@@ -10,3 +10,15 @@
     width: 100%;
     height: 400px;
 }
+
+#search-icon {
+    margin-left: 10px;
+    position: relative;
+    top: 6px;
+}
+
+#search-icon:hover {
+    cursor: pointer;
+    transition: color 0.15s ease-in-out;
+    color: #EDA906;
+}
