@@ -4,7 +4,7 @@ function renderProducts(products) {
     productsContainer = document.querySelector('#products');
     productsContainer.innerHTML = '';
 
-    if(products.length === 0) {
+    if (products.length === 0) {
         productsContainer.innerHTML = `
             <div class="col-12 text-center" style="margin-top: 85px">
                 <h3>No matching products found</h3>
@@ -38,7 +38,7 @@ function renderProducts(products) {
 async function fetchProducts(s, callback) {
     const response = await fetch('https://dummyjson.com/products/search?q=' + encodeURIComponent(s));
     const body = await response.json();
-    
+
     if (callback) {
         callback(body.products);
     }

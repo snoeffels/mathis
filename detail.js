@@ -13,8 +13,8 @@ function renderProduct(product) {
     productContainer.innerHTML = '';
     
     productContainer.innerHTML += `
-        <div class="col-md-3"></div>
-        <div class="col-12 col-md-6">
+        <div class="col-lg-3"></div>
+        <div class="col-12 col-lg-6" style="margin-bottom: 15px">
             <div class="card">
                 <div class="card-body detail-card">
                     <div class="detail-image-wrapper" style="background-image: url('${product.images[0]}')">
@@ -32,7 +32,7 @@ function renderProduct(product) {
                 </div>
             </div>
         </div>
-        <div class="col-12 col-md-3 recommendations">
+        <div class="col-12 col-lg-3 recommendations">
             <div class="row recommendations"></div>
         </div>
     `;
@@ -47,9 +47,11 @@ function renderRecommendations(products) {
         <div class="col-12" style="margin-bottom: 15px">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">${product.title}</h5>
+                <div class="item-title d-flex">
+                    <h5>${product.title}</h5>
+                    <span style="margin-left: auto">${product.price}€</p>
+                </div>
                     <p class="card-text">${product.description}</p>
-                    
                 </div>
                 <div class="card-footer d-flex">
                     <a href="/detail.html?id=${product.id}${q ? '&q=' + q : ''}" class="btn btn-primary">Show</a>
