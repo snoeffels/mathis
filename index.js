@@ -22,7 +22,10 @@ function renderProducts(products) {
                         </div>
                         <div class="item-title d-flex">
                             <h5>${product.title}</h5>
-                            <span style="margin-left: auto">${product.price}€</p>
+                            <div style="margin-left: auto">
+                                <span >${product.price}</span>
+                                <img style="width: 15px; height:15px; position:relative;bottom: 3px" src="/coin.png">
+                            </div>
                         </div>
                         <p class="card-text">${product.description}</p>
                     </div>

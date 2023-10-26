@@ -22,7 +22,8 @@ function renderProduct(product) {
                     <h5 class="card-title">${product.title}</h5>
                     <p class="card-text">${product.description}</p>
                     <div class="d-flex" style="align-items: flex-end">
-                        <p class="card-text" style="font-size: 25px; margin-bottom: 0px">${product.price}$</p>
+                        <p class="card-text" style="font-size: 25px; margin-bottom: 0px">${product.price}</p>
+                        <img style="width: 25px; position:relative;bottom: 5px;left: 3px" src="/coin.png">
                         <p class="card-text" style="margin-left: auto">${product.rating}/5</p>
                     </div>
                     
@@ -53,7 +54,8 @@ function renderRecommendations(products) {
                 <div class="card-body">
                 <div class="item-title d-flex">
                     <h5>${product.title}</h5>
-                    <span style="margin-left: auto">${product.price}€</p>
+                    <span style="margin-left: auto">${product.price}</span>
+                    <img style="width: 15px; height:15px; position:relative;top: 3px;left: 3px" src="/coin.png">
                 </div>
                     <p class="card-text">${product.description}</p>
                 </div>
