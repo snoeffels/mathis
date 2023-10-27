@@ -18,19 +18,22 @@ function renderProducts(products) {
             <div class="col-12 col-md-6 col-lg-4 mb-3">
                 <div class="card">
                     <div class="card-body item-body">
-                        <div class="item-image-wrapper bg-contain bg-center-x" style="background-image: url('${product.images[0]}');">
+                        <div 
+                            class="item-image-wrapper bg-contain bg-center-x" 
+                            style="background-image: url('${product.images[0]}');">
                         </div>
                         <div class="item-title d-flex">
                             <h5>${product.title}</h5>
-                            <div style="margin-left: auto">
-                                <span >${product.price}</span>
-                                <img style="width: 15px; height:15px; position:relative;bottom: 3px" src="/coin.png">
+                            <div style="margin-left: auto" class="d-flex">
+                                <span>${usdToDogeCoin(product.price)}</span>
+                                <img style="width: 15px; height:15px; position:relative; top: 3px; left: 3px" src="/coin.png">
                             </div>
                         </div>
                         <p class="card-text">${product.description}</p>
                     </div>
-                    <div class="card-footer">
+                    <div class="card-footer d-flex">
                         <a href="/detail.html?id=${product.id}${search ? '&q=' + search : ''}" class="btn btn-primary">Show</a>
+                        <span style="margin-left: auto">${product.rating}/5</span>
                     </div>
                 </div>
             </div>

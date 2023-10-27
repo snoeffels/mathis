@@ -22,9 +22,9 @@ function renderProduct(product) {
                     <h5 class="card-title">${product.title}</h5>
                     <p class="card-text">${product.description}</p>
                     <div class="d-flex" style="align-items: flex-end">
-                        <p class="card-text" style="font-size: 25px; margin-bottom: 0px">${product.price}</p>
+                        <p class="card-text" style="font-size: 25px; margin-bottom: 0px">${usdToDogeCoin(product.price)}</p>
                         <img style="width: 25px; position:relative;bottom: 7px;left: 3px" src="/coin.png">
-                        <p class="card-text" style="margin-left: auto">${product.rating}/5</p>
+                        <span style="margin-left: auto">${product.rating}/5</span>
                     </div>
                     
                 </div>
@@ -32,7 +32,7 @@ function renderProduct(product) {
                     <a href="${ q ? '..?q=' + q : '..' }" class="btn btn-primary">Back</a>
                     <div style="margin-left: auto">
                         <span style="margin-right:15px">Only ${product.stock} left!</span>
-                        <a class="btn btn-primary" >Buy</a>
+                        <a class="btn btn-primary" title="Not implemented!" >Buy</a>
                     </div>
                 </div>
             </div>
@@ -54,7 +54,7 @@ function renderRecommendations(products) {
                 <div class="card-body">
                 <div class="item-title d-flex">
                     <h5>${product.title}</h5>
-                    <span style="margin-left: auto">${product.price}</span>
+                    <span style="margin-left: auto">${usdToDogeCoin(product.price)}</span>
                     <img style="width: 15px; height:15px; position:relative;top: 3px;left: 3px" src="/coin.png">
                 </div>
                     <p class="card-text">${product.description}</p>
@@ -88,19 +88,18 @@ async function fetchProductsByCategory(category, callback) {
     }
 }
 
-
 async function init() {
     console.log(id);
     if (id) {
-        const category = (await fetchProductById(id, renderProduct))?.category;
-        console.log(category);
+        const product = (await fetchProductById(id, renderProduct));
     
-        if (category) {
-            fetchProductsByCategory(category, renderRecommendations);
+        if (product?.category) {
+            fetchProductsByCategory(product.category, renderRecommendations);
         }
     }
 }
 
-init();
-
-document.addEventListener("DOMContentLoaded", () => document.querySelector('#search').value = q);
+document.addEventListener("DOMContentLoaded", () => {
+    init();
+    document.querySelector('#search').value = q
+});
